@@ -1,0 +1,65 @@
+service: serverless-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+plugins:
+  - serverless-offline
+
+functions:
+    ${file(./src/routes/companyRoutes.yml):functions}
+
+# functions:
+#   insertCompany:
+#     handler: index.insertCompanyHandler
+#     events:
+#       - httpApi:
+#           path: /companies
+#           method: post
+
+#   getAllCompanies:
+#     handler: index.getAllCompaniesHandler
+#     events: 
+#       - httpApi:
+#           path: /companies
+#           method: get
+
+#   getCompanyById:
+#     handler: index.getCompanyByIdHandler
+#     events:
+#       - httpApi:
+#           path: /companies/{company_id}
+#           method: get
+
+#   updateCompanyById:
+#     handler: index.updateCompanyIdHandler
+#     events:
+#       - httpApi:
+#           path: /companies/{company_id}
+#           method: put
+
+#   updateCompanyName:
+#     handler: index.updateCompanyNameHandler
+#     events:
+#       - httpApi:
+#           path: /companies/{company_id}
+#           method: patch
+
+#   archiveCompanyById:
+#     handler: index.archiveCompanyByIdHandler
+#     events:
+#       - httpApi:
+#           path: /companies/{company_id}/archive
+#           method: delete
+
+#   deleteCompanyById:
+#     handler: index.deleteCompanyByIdHandler
+#     events:
+#       - httpApi:
+#           path: /companies/{company_id}
+#           method: delete
+  
+
+  

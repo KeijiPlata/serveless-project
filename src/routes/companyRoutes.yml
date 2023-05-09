@@ -1,0 +1,49 @@
+functions:
+  insertCompany:
+    handler: src/handlers/insertCompanyHandler.insertCompanyHandler
+    events:
+      - httpApi:
+          path: /companies
+          method: post
+
+  getAllCompanies:
+    handler: src/handlers/getAllCompaniesHandler.getAllCompaniesHandler
+    events: 
+      - httpApi:
+          path: /companies
+          method: get
+
+  getCompanyById:
+    handler: src/handlers/getCompanyByIdHandler.getCompanyByIdHandler
+    events:
+      - httpApi:
+          path: /companies/{company_id}
+          method: get
+
+  updateCompanyById:
+    handler: src/handlers/updateCompanyByIdHandler.updateCompanyByIdHandler
+    events:
+      - httpApi:
+          path: /companies/{company_id}
+          method: put
+
+  updateCompanyName:
+    handler: src/handlers/updateCompanyNameHandler.updateCompanyNameHandler
+    events:
+      - httpApi:
+          path: /companies/{company_id}
+          method: patch
+
+  archiveCompanyById:
+    handler: src/handlers/archiveCompanyByIdHandler.archiveCompanyByIdHandler
+    events:
+      - httpApi:
+          path: /companies/{company_id}/archive
+          method: delete
+
+  deleteCompanyById:
+    handler: src/handlers/deleteCompanyByIdHandler.deleteCompanyByIdHandler
+    events:
+      - httpApi:
+          path: /companies/{company_id}
+          method: delete
